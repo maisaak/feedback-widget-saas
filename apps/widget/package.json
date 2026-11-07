@@ -1,0 +1,19 @@
+{
+  "name": "@feedback-widget/widget",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
+  "scripts": {
+    "dev": "tsup src/index.ts --format esm,iife --global-name FeedbackWidget --dts --watch",
+    "build": "node scripts/build-widget.mjs",
+    "lint": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@feedback-widget/config": "workspace:*",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3"
+  }
+}
